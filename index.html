@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#20151e" />
+  <meta name="description" content="Create a tiny, unforgettable digital gift for someone special." />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Bloom for You — a little gift, a lot of feeling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Bloom for You home"><span class="brand-flower">✿</span><span>bloom<span class="brand-light">for you</span></span></a>
+      <div class="topbar-right"><span class="status-dot"></span><span id="topbar-label">YOUR LITTLE GIFT STUDIO</span><a class="toplink" href="#how-it-works">How it works ↗</a></div>
+    </header>
+
+    <main id="studio-view" class="studio-view">
+      <section class="intro-row">
+        <div>
+          <div class="eyebrow"><span>✳</span> MADE WITH A LITTLE EXTRA LOVE</div>
+          <h1>Some feelings deserve<br><em>their own little world.</em></h1>
+          <p class="intro-copy">Grow a rose, leave a note, tuck away a few memories.<br class="desktop-only"> Make something only they could receive.</p>
+        </div>
+        <div class="intro-stamp"><span class="stamp-heart">♥</span><span>made by you<br>kept by them</span></div>
+      </section>
+
+      <div class="studio-grid">
+        <section class="editor card-shell" aria-label="Customize your gift">
+          <div class="panel-heading"><div><span class="step-label">YOUR GIFT, YOUR WORDS</span><h2>Make it personal</h2></div><span class="edit-icon">✎</span></div>
+          <div class="progress-track"><span id="editor-progress"></span></div>
+          <form id="gift-form">
+            <div class="form-section">
+              <div class="section-title"><span class="number">01</span><div><h3>The people</h3><p>Who is this little world for?</p></div></div>
+              <div class="field-grid">
+                <label class="field"><span>Their name</span><input id="to-name" maxlength="45" value="My favourite person" placeholder="e.g. Aanya" /></label>
+                <label class="field"><span>Your name</span><input id="from-name" maxlength="45" value="Your person" placeholder="e.g. Suraj" /></label>
+              </div>
+              <label class="field"><span>Little headline</span><input id="headline" maxlength="80" value="For someone who makes life bloom" placeholder="A little something for you..." /></label>
+            </div>
+
+            <div class="form-section">
+              <div class="section-title"><span class="number">02</span><div><h3>Say what matters</h3><p>No perfect words needed. Just yours.</p></div></div>
+              <label class="field"><span>Your letter <small id="message-count">0 / 900</small></span><textarea id="message" maxlength="900" rows="5" placeholder="Sometimes I don't say it enough, but...">Some people make ordinary days feel like something worth remembering. You do that for me, just by being you. So here's a little reminder, whenever you need one: you are appreciated more than you know. Keep blooming, always. ♡</textarea></label>
+              <label class="field"><span>Sign-off</span><input id="signoff" maxlength="70" value="All my love, always ♡" /></label>
+            </div>
+
+            <div class="form-section">
+              <div class="section-title"><span class="number">03</span><div><h3>Pick their mood</h3><p>Choose a colour story.</p></div></div>
+              <div class="theme-picker" role="group" aria-label="Choose a theme">
+                <button type="button" class="theme-option active" data-theme="rose" aria-pressed="true"><span class="theme-swatch swatch-rose"></span><span>Rosewater</span></button>
+                <button type="button" class="theme-option" data-theme="midnight" aria-pressed="false"><span class="theme-swatch swatch-midnight"></span><span>Midnight</span></button>
+                <button type="button" class="theme-option" data-theme="peach" aria-pressed="false"><span class="theme-swatch swatch-peach"></span><span>Peach tea</span></button>
+                <button type="button" class="theme-option" data-theme="sage" aria-pressed="false"><span class="theme-swatch swatch-sage"></span><span>Soft sage</span></button>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <div class="section-title"><span class="number">04</span><div><h3>Keep a memory</h3><p>Little snapshots of your little world.</p></div></div>
+              <div class="upload-grid">
+                <label class="upload-tile" for="photo-1"><span class="upload-symbol">＋</span><span class="upload-title" id="photo-label-1">Add a photo</span><span class="upload-sub">Memory one · JPG/PNG</span><input type="file" id="photo-1" accept="image/*" /></label>
+                <label class="upload-tile" for="photo-2"><span class="upload-symbol">＋</span><span class="upload-title" id="photo-label-2">Add a photo</span><span class="upload-sub">Memory two · optional</span><input type="file" id="photo-2" accept="image/*" /></label>
+                <label class="upload-tile" for="photo-3"><span class="upload-symbol">＋</span><span class="upload-title" id="photo-label-3">Add a photo</span><span class="upload-sub">Memory three · optional</span><input type="file" id="photo-3" accept="image/*" /></label>
+              </div>
+              <p class="microcopy">Photos are resized in your browser before sharing. Max 3 photos.</p>
+            </div>
+
+            <div class="form-section extras-section">
+              <div class="section-title"><span class="number">05</span><div><h3>Add a soundtrack</h3><p>A song that sounds like your person.</p></div></div>
+              <label class="file-line"><span class="file-icon">♫</span><span class="file-copy"><strong id="music-name">Choose background music</strong><small>MP3, M4A or WAV · up to 800 KB</small></span><input type="file" id="music-file" accept="audio/*" /><span class="file-choose">Browse</span></label>
+              <label class="file-line"><span class="file-icon">◖</span><span class="file-copy"><strong id="voice-name">Add a voice note</strong><small>Say it in your own voice · up to 800 KB</small></span><input type="file" id="voice-file" accept="audio/*" /><span class="file-choose">Browse</span></label>
+              <button type="button" id="clear-media" class="text-button">Remove uploaded media</button>
+            </div>
+
+            <div class="form-actions"><button type="button" class="secondary-button" id="reset-form">Start over</button><button type="button" class="primary-button" id="make-link">Create their gift <span>↗</span></button></div>
+            <p class="privacy-note"><span>♧</span> Your gift is shared by an unlisted link. Anyone with the link can open it.</p>
+            <div id="share-result" class="share-result" hidden aria-live="polite"></div>
+          </form>
+        </section>
+
+        <aside class="preview-column">
+          <div class="preview-top"><div><span class="step-label">LIVE PREVIEW</span><h2>A little preview of the magic</h2></div><span class="live-pill"><i></i> LIVE</span></div>
+          <div id="gift-preview" class="gift-preview theme-rose">
+            <div class="preview-topline"><span>✿ A LITTLE SOMETHING</span><span>MADE WITH LOVE</span></div>
+            <div class="preview-copy"><span class="preview-for">A GIFT FOR <strong id="preview-to">MY FAVOURITE PERSON</strong></span><h2 id="preview-headline">For someone who<br><em>makes life bloom</em></h2><p>A little moment, just for you.</p></div>
+            <div id="rose-scene" class="rose-scene" data-stage="seed">
+              <div class="twinkle twinkle-one">✦</div><div class="twinkle twinkle-two">✧</div><div class="twinkle twinkle-three">·</div>
+              <div class="glass-dome"><div class="glass-glint"></div><div class="dome-inner">
+                <svg class="plant-svg" viewBox="0 0 280 270" role="img" aria-label="A rose growing under a glass dome">
+                  <ellipse cx="140" cy="238" rx="73" ry="12" fill="#4A342C" opacity=".15"/>
+                  <path class="stem" d="M140 232 C141 197 137 167 146 135 C148 123 148 119 150 111" fill="none" stroke="#537653" stroke-width="5" stroke-linecap="round"/>
+                  <path class="leaf leaf-left" d="M140 193 C102 191 88 171 91 155 C116 156 137 170 140 193Z" fill="#73916A"/>
+                  <path class="leaf leaf-right" d="M143 169 C178 166 192 146 189 132 C166 133 148 147 143 169Z" fill="#587D5A"/>
+                  <path class="leaf leaf-small" d="M140 215 C119 214 110 204 111 195 C126 197 136 204 140 215Z" fill="#8BA17D"/>
+                  <g class="rose-bud">
+                    <path class="petal petal-back" d="M150 124 C115 115 119 81 143 72 C160 61 177 76 174 93 C174 108 165 119 150 124Z" fill="#B84260"/>
+                    <path class="petal petal-left" d="M148 119 C111 120 102 96 121 82 C133 73 145 86 151 98Z" fill="#D96C83"/>
+                    <path class="petal petal-right" d="M149 119 C184 119 196 98 180 82 C166 70 153 88 149 101Z" fill="#C8506C"/>
+                    <path class="petal petal-inner" d="M149 118 C131 108 137 84 151 83 C168 83 169 103 149 118Z" fill="#F29AA8"/>
+                    <path class="petal petal-core" d="M149 116 C142 104 147 94 154 96 C162 100 157 111 149 116Z" fill="#F8C0BD"/>
+                  </g>
+                  <path class="soil" d="M82 230 Q140 216 198 230 L190 246 Q140 258 90 246Z" fill="#8A6A55"/>
+                  <g class="seed"><ellipse cx="140" cy="229" rx="9" ry="5" fill="#654735"/><path d="M135 227 Q140 220 145 227" fill="none" stroke="#BD9671" stroke-width="1.5"/></g>
+                  <g class="sprout"><path d="M140 230 Q138 215 140 201" stroke="#5C8A5A" fill="none" stroke-width="4" stroke-linecap="round"/><path d="M140 214 Q120 214 121 200 Q136 199 140 214" fill="#86A879"/><path d="M140 207 Q157 206 160 191 Q145 191 140 207" fill="#638D62"/></g>
+                </svg>
+              </div></div>
+              <div class="dome-base"><span></span></div>
+              <div class="scene-caption" id="scene-caption">Every beautiful thing starts small.</div>
+            </div>
+            <button type="button" id="water-button" class="preview-action">Water the little seed <span>✧</span></button>
+            <div class="preview-hint" id="preview-hint">TAP TO SEE THE ROSE GROW</div>
+            <div class="preview-footer"><span>GROWN WITH CARE</span><span>✳</span><span>KEPT FOREVER</span></div>
+          </div>
+          <div class="preview-note"><span class="preview-note-icon">♡</span><div><strong>Made for one person.</strong><p>Every change you make on the left updates this preview instantly.</p></div></div>
+          <div id="how-it-works" class="how-card"><span class="eyebrow">THREE LITTLE STEPS</span><div class="how-step"><span>01</span><div><strong>Make it yours</strong><p>Add your names, words, photos and sound.</p></div></div><div class="how-step"><span>02</span><div><strong>Grow the rose</strong><p>Preview the reveal and make it feel right.</p></div></div><div class="how-step"><span>03</span><div><strong>Send a little feeling</strong><p>Create a link and share it with your person.</p></div></div></div>
+        </aside>
+      </div>
+      <footer class="site-footer"><a class="brand footer-brand" href="./"><span class="brand-flower">✿</span><span>bloom<span class="brand-light">for you</span></span></a><span>A tiny digital keepsake, made with care.</span><a href="#top" id="back-to-top">BACK TO TOP ↑</a></footer>
+    </main>
+
+    <main id="recipient-view" class="recipient-view" hidden>
+      <div class="recipient-background"><span class="float-petal p1">✿</span><span class="float-petal p2">✧</span><span class="float-petal p3">❀</span><span class="float-petal p4">·</span></div>
+      <div class="recipient-card" id="recipient-card">
+        <div class="recipient-brand"><span class="brand-flower">✿</span> a little gift for you</div>
+        <div class="recipient-prelude"><span class="eyebrow">SOMETHING FROM THE HEART</span><p id="recipient-greeting">Someone has a little something for you.</p></div>
+        <div id="recipient-rose-scene" class="rose-scene recipient-rose" data-stage="seed">
+          <div class="twinkle twinkle-one">✦</div><div class="twinkle twinkle-two">✧</div><div class="twinkle twinkle-three">·</div>
+          <div class="glass-dome"><div class="glass-glint"></div><div class="dome-inner">
+            <svg class="plant-svg" viewBox="0 0 280 270" role="img" aria-label="A rose waiting to bloom">
+              <ellipse cx="140" cy="238" rx="73" ry="12" fill="#4A342C" opacity=".15"/>
+              <path class="stem" d="M140 232 C141 197 137 167 146 135 C148 123 148 119 150 111" fill="none" stroke="#537653" stroke-width="5" stroke-linecap="round"/>
+              <path class="leaf leaf-left" d="M140 193 C102 191 88 171 91 155 C116 156 137 170 140 193Z" fill="#73916A"/><path class="leaf leaf-right" d="M143 169 C178 166 192 146 189 132 C166 133 148 147 143 169Z" fill="#587D5A"/><path class="leaf leaf-small" d="M140 215 C119 214 110 204 111 195 C126 197 136 204 140 215Z" fill="#8BA17D"/>
+              <g class="rose-bud"><path class="petal petal-back" d="M150 124 C115 115 119 81 143 72 C160 61 177 76 174 93 C174 108 165 119 150 124Z" fill="#B84260"/><path class="petal petal-left" d="M148 119 C111 120 102 96 121 82 C133 73 145 86 151 98Z" fill="#D96C83"/><path class="petal petal-right" d="M149 119 C184 119 196 98 180 82 C166 70 153 88 149 101Z" fill="#C8506C"/><path class="petal petal-inner" d="M149 118 C131 108 137 84 151 83 C168 83 169 103 149 118Z" fill="#F29AA8"/><path class="petal petal-core" d="M149 116 C142 104 147 94 154 96 C162 100 157 111 149 116Z" fill="#F8C0BD"/></g>
+              <path class="soil" d="M82 230 Q140 216 198 230 L190 246 Q140 258 90 246Z" fill="#8A6A55"/><g class="seed"><ellipse cx="140" cy="229" rx="9" ry="5" fill="#654735"/><path d="M135 227 Q140 220 145 227" fill="none" stroke="#BD9671" stroke-width="1.5"/></g><g class="sprout"><path d="M140 230 Q138 215 140 201" stroke="#5C8A5A" fill="none" stroke-width="4" stroke-linecap="round"/><path d="M140 214 Q120 214 121 200 Q136 199 140 214" fill="#86A879"/><path d="M140 207 Q157 206 160 191 Q145 191 140 207" fill="#638D62"/></g>
+            </svg>
+          </div></div><div class="dome-base"><span></span></div><div class="scene-caption" id="recipient-scene-caption">Every beautiful thing starts small.</div>
+        </div>
+        <h1 id="recipient-headline">For someone who <em>makes life bloom</em></h1>
+        <p class="recipient-subtitle" id="recipient-subtitle">A little moment, just for you.</p>
+        <button id="recipient-action" class="preview-action recipient-action">Water the little seed <span>✧</span></button>
+        <div class="preview-hint" id="recipient-hint">TAKE YOUR TIME. THIS IS FOR YOU.</div>
+        <section id="letter-section" class="letter-section" hidden>
+          <div class="letter-rule"><span>✳</span> A NOTE FOR YOU <span>✳</span></div>
+          <p class="letter-to" id="letter-to"></p>
+          <div id="letter-body" class="letter-body"></div>
+          <p class="letter-signoff" id="letter-signoff"></p>
+          <p class="letter-from" id="letter-from"></p>
+        </section>
+        <section id="memories-section" class="memories-section" hidden><div class="letter-rule"><span>✳</span> LITTLE MEMORIES <span>✳</span></div><div id="recipient-photos" class="recipient-photos"></div></section>
+        <section id="voice-section" class="media-section" hidden><div class="letter-rule"><span>✳</span> A LITTLE VOICE NOTE <span>✳</span></div><audio id="recipient-voice" controls></audio></section>
+        <div id="recipient-audio-wrap" class="audio-wrap" hidden><span>♫ A SONG, JUST FOR YOU</span><audio id="recipient-audio" controls loop></audio></div>
+        <button id="open-letter" class="secondary-button" hidden>Read your letter ↓</button>
+        <div class="recipient-ending"><span>✿</span><p>Some things are better when they bloom slowly.</p><small>MADE WITH LOVE, JUST FOR YOU</small></div>
+      </div>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <div id="loading-screen" class="loading-screen" hidden><div class="loading-rose">✿</div><p>Bringing a little feeling to life…</p></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
