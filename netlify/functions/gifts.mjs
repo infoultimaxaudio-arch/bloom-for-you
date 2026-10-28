@@ -80,7 +80,10 @@ export const handler = async (event) => {
 
   if (method === 'OPTIONS') return json(204, {});
 
-  const store = getStore(STORE_NAME);
+  const store = getStoreconst store = getStore(STORE_NAME, {
+  siteID: process.env.BLOOM_NETLIFY_SITE_ID,
+  token: process.env.NETLIFY_AUTH_TOKEN
+});(STORE_NAME);
 
   if (method === 'POST') {
     let gift;
