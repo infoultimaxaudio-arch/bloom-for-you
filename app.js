@@ -168,7 +168,7 @@
     if(state.music?.data?.startsWith('data:audio/')){$('#recipient-audio').src=state.music.data;$('#recipient-audio-wrap').hidden=true;}else $('#recipient-audio-wrap').hidden=true;
     if(state.voice?.data?.startsWith('data:audio/')){$('#recipient-voice').src=state.voice.data;$('#voice-section').hidden=true;}else $('#voice-section').hidden=true;
     $('#open-letter').hidden=true;
-    $('#recipient-ending p').textContent='Some things are better when they bloom slowly.';
+    $('.recipient-ending p').textContent='Some things are better when they bloom slowly.';
     $('#studio-view').hidden=true;$('#recipient-view').hidden=false;$('#topbar-label').textContent='A LITTLE GIFT FOR YOU';
     document.title=`For ${state.to} — a little gift`;window.scrollTo(0,0);
     resetRose($('#recipient-rose-scene'),$('#recipient-scene-caption'),$('#recipient-hint'),$('#recipient-action'));
